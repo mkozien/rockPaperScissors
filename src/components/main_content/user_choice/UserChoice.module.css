@@ -1,0 +1,46 @@
+.wrapper {
+	height: 100%;
+	width: 50%;
+}
+
+.user-choice-label-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.user-choice-label {
+	font-size: 16px;
+	text-transform: uppercase;
+	margin: 30px auto 16px;
+	color: #000000;
+}
+
+.user-choice-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.user-choice-btn {
+	height: 40px;
+	width: 100px;
+	background-color: #357b84;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	margin: 10px 5px;
+	font-size: 14px;
+	text-transform: uppercase;
+	transition: height 0.5s, width 0.5s, background-color 0.5s, font-weight 0.5s,
+		font-size 0.5s;
+}
+
+.user-choice-btn:hover {
+	height: 44px;
+	width: 108px;
+	background-color: #244e53;
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: bold;
+}
