@@ -4,36 +4,31 @@ import styles from './UserChoice.module.css';
 const UserChoice = () => {
 	const [userChoice, setUserChoice] = useState('');
 
-	console.log(userChoice);
-
 	const chooseFighter = e => {
 		setUserChoice(e.target.id);
 	};
+
+	const choices = ['rock', 'paper', 'scissors'];
+	const choiceButtons = choices.map(choice => (
+		<button
+			key={choice}
+			id={choice}
+			onClick={chooseFighter}
+			className={styles['user-choice-btn']}>
+			{choice}
+		</button>
+	));
+
+	console.log(userChoice);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles['user-choice-label-wrapper']}>
 				<h2 className={styles['user-choice-label']}>choose your fighter</h2>
 			</div>
+			<div className={styles['choice-buttons-wrapper']}>{choiceButtons}</div>
 			<div className={styles['user-choice-wrapper']}>
-				<button
-					id='rock'
-					onClick={chooseFighter}
-					className={styles['user-choice-btn']}>
-					rock
-				</button>
-				<button
-					id='paper'
-					onClick={chooseFighter}
-					className={styles['user-choice-btn']}>
-					paper
-				</button>
-				<button
-					id='scissors'
-					onClick={chooseFighter}
-					className={styles['user-choice-btn']}>
-					scissors
-				</button>
+				<p className={styles['user-choice']}>{userChoice}</p>
 			</div>
 		</div>
 	);
