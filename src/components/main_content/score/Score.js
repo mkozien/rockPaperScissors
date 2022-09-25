@@ -4,7 +4,7 @@ import styles from './Score.module.css';
 const Score = () => {
 	const [score, setScore] = useState('');
 
-	const showScore = (userChoice, computerChoice) => {
+	const checkScore = (userChoice, computerChoice) => {
 		switch (score) {
 			case userChoice === computerChoice:
 				setScore("It's a draw!");
