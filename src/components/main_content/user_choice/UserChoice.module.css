@@ -4,7 +4,7 @@
 }
 
 .user-choice-label-wrapper {
-	height: 16%;
+	height: 26%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -18,10 +18,10 @@
 }
 
 .choice-buttons-wrapper {
-	height: 10%;
+	height: 20%;
 	display: flex;
 	justify-content: center;
-	align-items: flex-start;
+	align-items: center;
 }
 
 .user-choice-btn {
@@ -48,7 +48,7 @@
 }
 
 .user-choice-wrapper {
-	height: 74%;
+	height: 54%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;

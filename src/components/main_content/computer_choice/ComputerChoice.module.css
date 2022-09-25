@@ -4,7 +4,7 @@
 }
 
 .choice-button-wrapper {
-	height: 26%;
+	height: 46%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;
@@ -34,7 +34,7 @@
 }
 
 .computer-choice-wrapper {
-	height: 74%;
+	height: 54%;
 	display: flex;
 	justify-content: center;
 	align-items: flex-start;

@@ -1,8 +1,22 @@
 .content {
 	height: 80vh;
 	width: 100%;
+	position: relative;
+	color: #000000;
+}
+
+.choices-wrapper {
+	height: 60%;
+	width: 100%;
 	display: flex;
 	justify-content: start;
 	align-items: center;
-	color: #000000;
+}
+
+.score-wrapper {
+	height: 40%;
+	width: 100%;
+	display: flex;
+	justify-content: start;
+	align-items: center;
 }
