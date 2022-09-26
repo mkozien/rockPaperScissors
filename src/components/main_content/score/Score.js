@@ -1,32 +1,13 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import ScoreContext from '../../../context/score-context';
 import styles from './Score.module.css';
 
 const Score = () => {
-	const [score, setScore] = useState('');
-
-	const checkScore = (userChoice, computerChoice) => {
-		switch (score) {
-			case userChoice === computerChoice:
-				setScore("It's a draw!");
-				break;
-			case (userChoice === 'scissors' && computerChoice === 'paper') ||
-				(userChoice === 'rock' && computerChoice === 'scissors') ||
-				(userChoice === 'paper' && computerChoice === 'rock'):
-				setScore('You won!');
-				break;
-			case (userChoice === 'paper' && computerChoice === 'scissors') ||
-				(userChoice === 'scissors' && computerChoice === 'rock') ||
-				(userChoice === 'rock' && computerChoice === 'paper'):
-				setScore('You lost!');
-				break;
-			default:
-				setScore('');
-		}
-	};
+	const scoreCtx = useContext(ScoreContext);
 
 	return (
 		<div className={styles['score-wrapper']}>
-			<p className={styles.score}>{score}</p>
+			<p className={styles.score}>{scoreCtx.score}</p>
 		</div>
 	);
 };

@@ -1,28 +1,23 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+import ScoreContext from '../../../context/score-context';
 import styles from './ComputerChoice.module.css';
 
 const ComputerChoice = () => {
-	const [computerChoice, setComputerChoice] = useState('');
+	const scoreCtx = useContext(ScoreContext);
 
-	const choices = ['rock', 'paper', 'scissors'];
-	const chooseOpponent = () => {
-		const opponent = choices[Math.floor(Math.random() * choices.length)];
-		setComputerChoice(opponent);
-	};
-
-	console.log(computerChoice);
+	console.log(scoreCtx.computerChoice);
 
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles['choice-button-wrapper']}>
 				<button
-					onClick={chooseOpponent}
+					onClick={scoreCtx.chooseOpponent}
 					className={styles['computer-choice-btn']}>
 					choose the opponent
 				</button>
 			</div>
 			<div className={styles['computer-choice-wrapper']}>
-				<p className={styles['computer-choice']}>{computerChoice}</p>
+				<p className={styles['computer-choice']}>{scoreCtx.computerChoice}</p>
 			</div>
 		</div>
 	);
