@@ -10,12 +10,15 @@ const ComputerChoice = () => {
 			<div className={styles['choice-button-wrapper']}>
 				<button
 					onClick={scoreCtx.chooseOpponent}
-					className={styles['computer-choice-btn']}>
-					choose the opponent
+					className={styles['computer-choice-btn']}
+					disabled={scoreCtx.userChoice.current === '' || scoreCtx.score.current !== ''}>
+					check the opponent
 				</button>
 			</div>
 			<div className={styles['computer-choice-wrapper']}>
-				<p className={styles['computer-choice']}>{scoreCtx.computerChoice.current}</p>
+				<p className={styles['computer-choice']}>
+					{scoreCtx.computerChoice.current}
+				</p>
 			</div>
 		</div>
 	);

@@ -33,6 +33,23 @@
 	font-weight: bold;
 }
 
+.computer-choice-btn:disabled {
+	opacity: 0.5;
+}
+
+.computer-choice-btn:disabled:hover {
+	height: 40px;
+	width: 220px;
+	background-color: #357b84;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	margin: auto;
+	font-size: 14px;
+	font-weight: normal;
+	cursor: not-allowed;
+}
+
 .computer-choice-wrapper {
 	height: 54%;
 	display: flex;

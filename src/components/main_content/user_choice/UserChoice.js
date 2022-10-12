@@ -10,7 +10,8 @@ const UserChoice = () => {
 			key={choice}
 			id={choice}
 			onClick={scoreCtx.chooseFighter}
-			className={styles['user-choice-btn']}>
+			className={styles['user-choice-btn']}
+			disabled={scoreCtx.score.current !== ''}>
 			{choice}
 		</button>
 	));

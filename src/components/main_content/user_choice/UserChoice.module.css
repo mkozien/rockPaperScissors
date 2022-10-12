@@ -47,6 +47,23 @@
 	font-weight: bold;
 }
 
+.user-choice-btn:disabled {
+	opacity: 0.5;
+}
+
+.user-choice-btn:disabled:hover {
+	height: 40px;
+	width: 100px;
+	background-color: #357b84;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	margin: 10px 5px;
+	font-size: 14px;
+	font-weight: normal;
+	cursor: not-allowed;
+}
+
 .user-choice-wrapper {
 	height: 54%;
 	display: flex;

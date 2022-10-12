@@ -70,15 +70,11 @@ const Main = () => {
 	const chooseFighter = e => {
 		userChoiceRef.current = e.target.id;
 		setUserChoice(userChoiceRef.current);
-		if (computerChoiceRef.current !== '') {
-			checkScore();
-		}
 	};
 
 	const chooseOpponent = () => {
 		const opponent = choices[Math.floor(Math.random() * choices.length)];
 		computerChoiceRef.current = opponent;
-		console.log(computerChoiceRef.current);
 		setComputerChoice(computerChoiceRef.current);
 		if (userChoiceRef.current !== '') {
 			checkScore();
