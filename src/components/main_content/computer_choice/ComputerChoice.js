@@ -5,8 +5,6 @@ import styles from './ComputerChoice.module.css';
 const ComputerChoice = () => {
 	const scoreCtx = useContext(ScoreContext);
 
-	console.log(scoreCtx.computerChoice);
-
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles['choice-button-wrapper']}>

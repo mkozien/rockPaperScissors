@@ -70,10 +70,8 @@ const Main = () => {
 	const chooseFighter = e => {
 		userChoiceRef.current = e.target.id;
 		setUserChoice(userChoiceRef.current);
-		console.log(userChoiceRef.current);
 		if (computerChoiceRef.current !== '') {
 			checkScore();
-			console.log(scoreRef.current);
 		}
 	};
 
@@ -84,12 +82,8 @@ const Main = () => {
 		setComputerChoice(computerChoiceRef.current);
 		if (userChoiceRef.current !== '') {
 			checkScore();
-			console.log(scoreRef.current);
 		}
 	};
-
-	console.log(scoreRef.current);
-	console.log(ScoreContext);
 
 	return (
 		<main className={styles.content}>

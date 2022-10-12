@@ -15,8 +15,6 @@ const UserChoice = () => {
 		</button>
 	));
 
-	console.log(scoreCtx.userChoice);
-
 	return (
 		<div className={styles.wrapper}>
 			<div className={styles['user-choice-label-wrapper']}>
