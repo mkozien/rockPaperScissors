@@ -24,7 +24,7 @@ const UserChoice = () => {
 			</div>
 			<div className={styles['choice-buttons-wrapper']}>{choiceButtons}</div>
 			<div className={styles['user-choice-wrapper']}>
-				<p className={styles['user-choice']}>{scoreCtx.userChoice}</p>
+				<p className={styles['user-choice']}>{scoreCtx.userChoice.current}</p>
 			</div>
 		</div>
 	);

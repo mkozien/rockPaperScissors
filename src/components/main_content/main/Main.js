@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import UserChoice from '../user_choice/UserChoice';
 import ComputerChoice from '../computer_choice/ComputerChoice';
 import Score from '../score/Score';
@@ -10,46 +10,94 @@ const Main = () => {
 	const [computerChoice, setComputerChoice] = useState('');
 	const [score, setScore] = useState('');
 
+	const userChoiceRef = useRef(userChoice);
+	const computerChoiceRef = useRef(computerChoice);
+	const scoreRef = useRef(score);
+
+	useEffect(() => {}, [userChoiceRef, computerChoiceRef, scoreRef]);
+
 	const choices = ['rock', 'paper', 'scissors'];
 
+	const checkScore = () => {
+		if (userChoiceRef.current === computerChoiceRef.current) {
+			scoreRef.current = "It's a draw!";
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'scissors' &&
+			computerChoiceRef.current === 'paper'
+		) {
+			scoreRef.current = 'You won!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'rock' &&
+			computerChoiceRef.current === 'scissors'
+		) {
+			scoreRef.current = 'You won!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'paper' &&
+			computerChoiceRef.current === 'rock'
+		) {
+			scoreRef.current = 'You won!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'paper' &&
+			computerChoiceRef.current === 'scissors'
+		) {
+			scoreRef.current = 'You lost!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'scissors' &&
+			computerChoiceRef.current === 'rock'
+		) {
+			scoreRef.current = 'You lost!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === 'rock' &&
+			computerChoiceRef.current === 'paper'
+		) {
+			scoreRef.current = 'You lost!';
+			setScore(scoreRef.current);
+		} else if (
+			userChoiceRef.current === '' &&
+			computerChoiceRef.current === ''
+		) {
+			scoreRef.current = '';
+			setScore(scoreRef.current);
+		}
+	};
+
 	const chooseFighter = e => {
-		setUserChoice(e.target.id);
+		userChoiceRef.current = e.target.id;
+		setUserChoice(userChoiceRef.current);
+		console.log(userChoiceRef.current);
+		if (computerChoiceRef.current !== '') {
+			checkScore();
+			console.log(scoreRef.current);
+		}
 	};
 
 	const chooseOpponent = () => {
 		const opponent = choices[Math.floor(Math.random() * choices.length)];
-		setComputerChoice(opponent);
-	};
-
-	const checkScore = () => {
-		if (userChoice !== '' && computerChoice !== '') {
-			switch (score) {
-				case userChoice === computerChoice:
-					setScore("It's a draw!");
-					break;
-				case (userChoice === 'scissors' && computerChoice === 'paper') ||
-					(userChoice === 'rock' && computerChoice === 'scissors') ||
-					(userChoice === 'paper' && computerChoice === 'rock'):
-					setScore('You won!');
-					break;
-				case (userChoice === 'paper' && computerChoice === 'scissors') ||
-					(userChoice === 'scissors' && computerChoice === 'rock') ||
-					(userChoice === 'rock' && computerChoice === 'paper'):
-					setScore('You lost!');
-					break;
-				default:
-					setScore('');
-			}
+		computerChoiceRef.current = opponent;
+		console.log(computerChoiceRef.current);
+		setComputerChoice(computerChoiceRef.current);
+		if (userChoiceRef.current !== '') {
+			checkScore();
+			console.log(scoreRef.current);
 		}
 	};
+
+	console.log(scoreRef.current);
+	console.log(ScoreContext);
 
 	return (
 		<main className={styles.content}>
 			<ScoreContext.Provider
 				value={{
-					userChoice: userChoice,
-					computerChoice: computerChoice,
-					score: score,
+					userChoice: userChoiceRef,
+					computerChoice: computerChoiceRef,
+					score: scoreRef,
 					choices: choices,
 					chooseFighter: chooseFighter,
 					chooseOpponent: chooseOpponent,

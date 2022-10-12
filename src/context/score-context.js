@@ -1,6 +1,6 @@
-import React from 'react';
+import { createContext } from 'react';
 
-const ScoreContext = React.createContext({
+const ScoreContext = createContext({
 	userChoice: '',
 	computerChoice: '',
 	score: '',

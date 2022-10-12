@@ -5,9 +5,11 @@ import styles from './Score.module.css';
 const Score = () => {
 	const scoreCtx = useContext(ScoreContext);
 
+	console.log(scoreCtx.score);
+
 	return (
 		<div className={styles['score-wrapper']}>
-			<p className={styles.score}>{scoreCtx.score}</p>
+			<p className={styles.score}>{scoreCtx.score.current}</p>
 		</div>
 	);
 };

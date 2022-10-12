@@ -17,7 +17,7 @@ const ComputerChoice = () => {
 				</button>
 			</div>
 			<div className={styles['computer-choice-wrapper']}>
-				<p className={styles['computer-choice']}>{scoreCtx.computerChoice}</p>
+				<p className={styles['computer-choice']}>{scoreCtx.computerChoice.current}</p>
 			</div>
 		</div>
 	);
