@@ -1,7 +1,12 @@
-.score-wrapper {
+.wrapper {
 	height: 100%;
 	width: 100%;
-	height: 26%;
+}
+
+.score-wrapper {
+	height: 30%;
+	width: 100%;
+	height: 30%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -12,4 +17,53 @@
 	font-size: 36px;
 	font-weight: bold;
 	text-decoration: underline;
+}
+
+.reset-btn-wrapper {
+	height: 70%;
+	width: 100%;
+	height: 70%;
+	display: flex;
+	justify-content: center;
+	align-items: flex-start;
+}
+
+.reset-btn {
+	height: 60px;
+	width: 240px;
+	background-color: #357b84;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	margin: auto;
+	font-size: 24px;
+	text-transform: uppercase;
+	transition: height 0.5s, width 0.5s, background-color 0.5s, font-weight 0.5s,
+		font-size 0.5s;
+}
+
+.reset-btn:hover {
+	height: 64px;
+	width: 248px;
+	background-color: #244e53;
+	cursor: pointer;
+	font-size: 28px;
+	font-weight: bold;
+}
+
+.reset-btn:disabled {
+	opacity: 0.5;
+}
+
+.reset-btn:disabled:hover {
+	height: 60px;
+	width: 240px;
+	background-color: #357b84;
+	color: #fff;
+	border: none;
+	border-radius: 10px;
+	margin: auto;
+	font-size: 24px;
+	font-weight: normal;
+	cursor: not-allowed;
 }

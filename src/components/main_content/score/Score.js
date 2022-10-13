@@ -6,8 +6,13 @@ const Score = () => {
 	const scoreCtx = useContext(ScoreContext);
 
 	return (
-		<div className={styles['score-wrapper']}>
-			<p className={styles.score}>{scoreCtx.score.current}</p>
+		<div className={styles.wrapper}>
+			<div className={styles['score-wrapper']}>
+				<p className={styles.score}>{scoreCtx.score.current}</p>
+			</div>
+			<div className={styles['reset-btn-wrapper']}>
+				<button className={styles['reset-btn']}>play again</button>
+			</div>
 		</div>
 	);
 };
