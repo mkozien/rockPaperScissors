@@ -7,6 +7,7 @@ const ScoreContext = createContext({
 	chooseFighter: () => {},
 	chooseOpponent: () => {},
 	checkScore: () => {},
+	resetScore: () => {},
 });
 
 export default ScoreContext;

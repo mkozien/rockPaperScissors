@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef } from 'react';
 import UserChoice from '../user_choice/UserChoice';
 import ComputerChoice from '../computer_choice/ComputerChoice';
 import Score from '../score/Score';
@@ -13,8 +13,6 @@ const Main = () => {
 	const userChoiceRef = useRef(userChoice);
 	const computerChoiceRef = useRef(computerChoice);
 	const scoreRef = useRef(score);
-
-	useEffect(() => {}, [userChoiceRef, computerChoiceRef, scoreRef]);
 
 	const choices = ['rock', 'paper', 'scissors'];
 
@@ -81,6 +79,15 @@ const Main = () => {
 		}
 	};
 
+	const resetScore = () => {
+		userChoiceRef.current = '';
+		setUserChoice('');
+		computerChoiceRef.current = '';
+		setComputerChoice('');
+		scoreRef.current = '';
+		setScore('');
+	}
+
 	return (
 		<main className={styles.content}>
 			<ScoreContext.Provider
@@ -92,6 +99,7 @@ const Main = () => {
 					chooseFighter: chooseFighter,
 					chooseOpponent: chooseOpponent,
 					checkScore: checkScore,
+					resetScore: resetScore
 				}}>
 				<div className={styles['choices-wrapper']}>
 					<UserChoice />
