@@ -86,7 +86,7 @@ const Main = () => {
 		setComputerChoice('');
 		scoreRef.current = '';
 		setScore('');
-	}
+	};
 
 	return (
 		<main className={styles.content}>
@@ -99,7 +99,7 @@ const Main = () => {
 					chooseFighter: chooseFighter,
 					chooseOpponent: chooseOpponent,
 					checkScore: checkScore,
-					resetScore: resetScore
+					resetScore: resetScore,
 				}}>
 				<div className={styles['choices-wrapper']}>
 					<UserChoice />

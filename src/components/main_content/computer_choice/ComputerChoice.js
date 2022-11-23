@@ -11,7 +11,9 @@ const ComputerChoice = () => {
 				<button
 					onClick={scoreCtx.chooseOpponent}
 					className={styles['computer-choice-btn']}
-					disabled={scoreCtx.userChoice.current === '' || scoreCtx.score.current !== ''}>
+					disabled={
+						scoreCtx.userChoice.current === '' || scoreCtx.score.current !== ''
+					}>
 					check the opponent
 				</button>
 			</div>
